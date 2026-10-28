@@ -17,7 +17,7 @@
 
 ## 🌐 Site ao vivo
 
-👉 **Acesse o portfólio online:** [https://seu-usuario.github.io/seu-repositorio](https://seu-usuario.github.io/seu-repositorio)
+👉 **Acesse o portfólio online:** [https://github.com/cleiton9321-dev/Tailwind-css](https://cleiton9321-dev.github.io/Tailwind-css/)
 
 > 💡 O site também roda offline — basta abrir o `index.html` no navegador.
 
