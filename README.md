@@ -15,6 +15,14 @@
 
 ---
 
+## 🌐 Site ao vivo
+
+👉 **Acesse o portfólio online:** [https://seu-usuario.github.io/seu-repositorio](https://seu-usuario.github.io/seu-repositorio)
+
+> 💡 O site também roda offline — basta abrir o `index.html` no navegador.
+
+---
+
 ## 📖 Sobre o projeto
 
 Este repositório contém o **portfólio interativo sobre Tailwind CSS** desenvolvido pelo **Grupo 1** para o projeto do **2° semestre do SESI**.
@@ -41,16 +49,16 @@ Não é uma cópia. Não é uma captura de tela. É o **mesmo código** que est�
 
 Cada seção segue o **mesmo padrão visual** (header → body → footer) e ensina um conceito diferente do Tailwind:
 
-| # | Seção | O que ensina | Classes-chave |
-|---|-------|--------------|---------------|
-| 01 | **Tipografia** | Escala de tamanhos e pesos | `text-xs` a `text-9xl`, `font-light` a `font-black` |
-| 02 | **Botões** | Estados interativos | `hover:`, `active:`, `focus:`, `disabled:` |
-| 03 | **Cards** | Composição de componentes | `rounded-*`, `shadow-*`, `flex`, `gap-*` |
-| 04 | **Cores** | Escala de tons | `bg-{cor}-{50 a 950}` |
-| 05 | **Espaçamento** | Padding, margin e gap | `p-*`, `m-*`, `gap-*` |
-| 06 | **Flex vs Grid** | Layouts lado a lado | `flex`, `grid grid-cols-*` |
-| 07 | **Responsivo** | Breakpoints mobile-first | `sm:`, `md:`, `lg:` |
-| 08 | **Mini-jogo** | Testar o aprendizado | tudo junto 🎮 |
+| #   | Seção            | O que ensina               | Classes-chave                                       |
+| --- | ---------------- | -------------------------- | --------------------------------------------------- |
+| 01  | **Tipografia**   | Escala de tamanhos e pesos | `text-xs` a `text-9xl`, `font-light` a `font-black` |
+| 02  | **Botões**       | Estados interativos        | `hover:`, `active:`, `focus:`, `disabled:`          |
+| 03  | **Cards**        | Composição de componentes  | `rounded-*`, `shadow-*`, `flex`, `gap-*`            |
+| 04  | **Cores**        | Escala de tons             | `bg-{cor}-{50 a 950}`                               |
+| 05  | **Espaçamento**  | Padding, margin e gap      | `p-*`, `m-*`, `gap-*`                               |
+| 06  | **Flex vs Grid** | Layouts lado a lado        | `flex`, `grid grid-cols-*`                          |
+| 07  | **Responsivo**   | Breakpoints mobile-first   | `sm:`, `md:`, `lg:`                                 |
+| 08  | **Mini-jogo**    | Testar o aprendizado       | tudo junto 🎮                                       |
 
 ### 🎨 Recursos visuais
 
@@ -79,14 +87,14 @@ O portfólio inclui um jogo educativo **completo** onde o jogador precisa **comp
 
 ### O que o jogo ensina
 
-| Fase | Conceito |
-|------|----------|
-| 1 | Cor de fundo (`bg-blue-900`) |
-| 2 | Bordas arredondadas (`rounded-full`) |
-| 3 | Sombra (`shadow-lg`) |
-| 4 | Centralização com Flex (`justify-center items-center`) |
-| 5 | Hover (`hover:text-red-600`) |
-| 6 | Padding (`p-8`) |
+| Fase | Conceito                                               |
+| ---- | ------------------------------------------------------ |
+| 1    | Cor de fundo (`bg-blue-900`)                           |
+| 2    | Bordas arredondadas (`rounded-full`)                   |
+| 3    | Sombra (`shadow-lg`)                                   |
+| 4    | Centralização com Flex (`justify-center items-center`) |
+| 5    | Hover (`hover:text-red-600`)                           |
+| 6    | Padding (`p-8`)                                        |
 
 O jogo **não ensina nada novo** — ele **testa o que o portfólio ensinou**. É a prova viva de que o aprendizado aconteceu.
 
@@ -94,16 +102,30 @@ O jogo **não ensina nada novo** — ele **testa o que o portfólio ensinou**. �
 
 ## 🛠️ Tecnologias
 
-| Tecnologia | Uso |
-|------------|-----|
-| **HTML5** | Estrutura do site |
-| **Tailwind CSS (via CDN)** | Estilização 100% por classes utilitárias |
-| **JavaScript vanilla** | Interatividade (toggle de código, jogo, animações) |
-| **Google Fonts** | Inter + Space Grotesk + Fira Code |
-| **SVG inline** | Paths de fundo do hero |
-| **CSS keyframes** | Animações (letras do título, feedback do jogo) |
+| Tecnologia                 | Uso                                                |
+| -------------------------- | -------------------------------------------------- |
+| **HTML5**                  | Estrutura do site                                  |
+| **Tailwind CSS (via CDN)** | Estilização 100% por classes utilitárias           |
+| **JavaScript vanilla**     | Interatividade (toggle de código, jogo, animações) |
+| **Google Fonts**           | Inter + Space Grotesk + Fira Code                  |
+| **SVG inline**             | Paths de fundo do hero                             |
+| **CSS keyframes**          | Animações (letras do título, feedback do jogo)     |
 
 > ⚠️ **Nenhum framework de JavaScript** (React, Vue, etc.) foi usado. Tudo é HTML + Tailwind + JS puro, para manter o foco no que realmente importa: as classes.
+
+---
+
+## 👥 Equipe
+
+Projeto desenvolvido pelo **Grupo 1 — 2° Semestre SESI**.
+
+| Integrante          | Função principal                       |
+| ------------------- | -------------------------------------- |
+| **Cleiton Candido** | Criação do Site demonstrativo          |
+| **Luiza Cabral**    | Apresentação teórica + slides no Canva |
+| **Giovana Ramos**   | Apresentação teórica + slides no Canva |
+
+> 💡 **Todos participaram de todas as etapas** — a divisão acima é apenas organizacional. Pesquisa, criação do site, ensaio e apresentação foram feitas em conjunto.
 
 ---
 
@@ -116,3 +138,4 @@ O projeto **não precisa de instalação**. Basta abrir o arquivo HTML no navega
 1. Clone o repositório:
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
