@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR" class="scroll-smooth">
+< lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,12 +23,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Fira+Code:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
     <style>
-      /* Letras do título — efeito spring */
       @keyframes rise-letter {
         0% {
           transform: translateY(100px);
@@ -43,8 +42,6 @@
           opacity: 1;
         }
       }
-
-      /* Máscara radial — paths somem no centro, aparecem nas bordas */
       .paths-fade {
         -webkit-mask-image: radial-gradient(
           ellipse 70% 65% at center,
@@ -71,7 +68,6 @@
           );
         }
       }
-
       @media (prefers-reduced-motion: reduce) {
         #hero-title span {
           animation: none !important;
@@ -79,2393 +75,723 @@
           transform: none !important;
         }
       }
+      .code-font {
+        font-family: "Fira Code", monospace;
+      }
+      .class-item {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 1rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .dark .class-item {
+        border-bottom-color: rgba(255, 255, 255, 0.06);
+      }
+      .class-item:last-child {
+        border-bottom: none;
+      }
     </style>
   </head>
+  <body class="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 antialiased font-sans min-h-screen">
 
-  <body
-    class="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 antialiased font-sans min-h-screen"
-  >
-    <!-- ===== Fundo fixo com paths — visível em todo o site ===== -->
-    <div class="fixed inset-0 pointer-events-none z-0 paths-fade">
-      <svg
-        id="paths-svg"
-        class="w-full h-full text-blue-500 dark:text-blue-400 opacity-[0.25] dark:opacity-[0.30]"
-        viewBox="0 0 696 316"
-        fill="none"
-        preserveAspectRatio="xMidYMid slice"
-        aria-hidden="true"
-      >
-        <title>Background Paths</title>
-      </svg>
-    </div>
+  <div class="fixed inset-0 pointer-events-none z-0 paths-fade">
+    <svg id="paths-svg" class="w-full h-full text-blue-500 dark:text-blue-400 opacity-[0.25] dark:opacity-[0.30]"
+      viewBox="0 0 696 316" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <title>Background Paths</title>
+    </svg>
+  </div>
 
-    <!-- ===== Conteúdo ===== -->
-    <main class="relative z-10">
-      <!-- ==================================================
-         HERO
-    =================================================== -->
-      <section
-        class="min-h-screen w-full flex items-center justify-center px-4 md:px-6"
-      >
-        <div class="max-w-4xl mx-auto text-center">
-          <span
-            class="inline-block bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8"
-          >
-            Grupo 1 · 2° Semestre SESI
+  <main class="relative z-10">
+
+    <section class="min-h-screen w-full flex items-center justify-center px-4 md:px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8">
+          Grupo 1 · 2° Semestre SESI
+        </span>
+        <h1 id="hero-title" class="font-display text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter text-neutral-900 dark:text-white"></h1>
+        <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed mb-10">
+          Um site que se explica. Feito 100% com
+          <strong class="text-neutral-900 dark:text-white font-semibold">Tailwind CSS</strong>
+          — clique em "Ver classes" para entender cada exemplo.
+        </p>
+        <div class="inline-block group relative bg-gradient-to-b from-black/10 to-white/10 dark:from-white/10 dark:to-black/10 p-px rounded-2xl backdrop-blur-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <button type="button"
+            class="flex items-center justify-center rounded-[1.15rem] px-10 h-16 text-lg font-semibold
+                   backdrop-blur-md bg-white/95 hover:bg-white dark:bg-neutral-900/95 dark:hover:bg-neutral-900
+                   text-neutral-900 dark:text-white transition-all duration-300 group-hover:-translate-y-0.5
+                   border border-black/10 dark:border-white/10">
+            <span>Ver demonstração</span>
+            <span class="ml-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+        <section class="example max-w-6xl mx-auto px-6 py-24">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight">Tipografia</h2>
+      <p class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg">
+        Escala fixa de tamanhos e pesos. Cada card segue o mesmo padrão visual.
+      </p>
+
+      <div class="preview">
+        <article class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden">
+          <header class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">Seção 01</span>
+              <span class="text-neutral-300 dark:text-neutral-700">·</span>
+              <span class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Tipografia</span>
+            </div>
+          </header>
+
+          <div class="p-8 md:p-14">
+            <h3 class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">Escala tipográfica</h3>
+            <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-12 max-w-2xl leading-relaxed">
+              Do <code class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono">text-xs</code> ao
+              <code class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono">text-9xl</code>.
+            </p>
+            <div class="space-y-4 border-l-2 border-blue-500 pl-6">
+              <p class="text-xs text-neutral-500">text-xs — legenda, texto auxiliar</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">text-sm — texto pequeno</p>
+              <p class="text-base text-neutral-700 dark:text-neutral-300">text-base — texto padrão do corpo</p>
+              <p class="text-lg text-neutral-700 dark:text-neutral-300">text-lg — texto de destaque</p>
+              <p class="text-xl font-medium text-neutral-800 dark:text-neutral-200">text-xl font-medium — subtítulo</p>
+              <p class="text-2xl font-semibold text-neutral-800 dark:text-neutral-200">text-2xl font-semibold — subtítulo forte</p>
+              <p class="text-3xl font-bold text-neutral-900 dark:text-white">text-3xl font-bold — título</p>
+              <p class="font-display text-4xl md:text-5xl font-black text-neutral-900 dark:text-white">text-4xl font-black — destaque</p>
+            </div>
+          </div>
+
+          <footer class="flex items-center justify-between px-8 md:px-12 py-6 bg-neutral-50 dark:bg-neutral-950/50 border-t border-neutral-100 dark:border-neutral-800">
+            <ul class="flex items-center">
+              <li class="w-9 h-9 rounded-full bg-blue-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900">RS</li>
+              <li class="-ml-2 w-9 h-9 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900">SR</li>
+            </ul>
+            <span class="text-sm font-semibold text-neutral-500 dark:text-neutral-400">Leitura · 2 min</span>
+          </footer>
+        </article>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mt-10">
+        <button class="btn-classes w-full sm:w-auto h-14 px-6 bg-blue-600 text-white rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-blue-700 transition shadow-md">Ver classes</button>
+        <button class="btn-code w-full sm:w-auto h-14 px-6 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md">Ver código</button>
+        <button class="btn-copy hidden w-full sm:w-auto h-14 px-6 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">Copiar</button>
+      </div>
+
+      <div class="classes-panel hidden mt-6 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 md:p-8">
+        <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-4">Classes usadas</p>
+        <div class="classes-list"></div>
+      </div>
+
+      <pre class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-6 border border-neutral-800 code-font"><code></code></pre>
+    </section>
+        <section class="example max-w-6xl mx-auto px-6 py-24">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight">Botões &amp; interação</h2>
+      <p class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg">
+        Prefixos como <code class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono">hover:</code>,
+        <code class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono">active:</code> e
+        <code class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono">disabled:</code> mudam o visual só em estados específicos.
+      </p>
+
+      <div class="preview">
+        <article class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden">
+          <header class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Seção 02</span>
+              <span class="text-neutral-300 dark:text-neutral-700">·</span>
+              <span class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Botões</span>
+            </div>
+          </header>
+
+          <div class="p-8 md:p-14">
+            <h3 class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">Estados de um botão</h3>
+            <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-12 max-w-2xl leading-relaxed">Passe o mouse, clique ou tente clicar no desabilitado.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              <button class="h-14 bg-neutral-900 text-white rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 transition shadow-md">Primário</button>
+              <button class="h-14 bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">Secundário</button>
+              <button class="h-14 bg-emerald-600 text-white rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-emerald-700 active:scale-95 transition shadow-md">Sucesso</button>
+              <button class="h-14 bg-blue-600 text-white rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/30 transition shadow-md">Focus ring</button>
+              <button class="h-14 bg-red-600 text-white rounded-xl font-semibold text-lg flex items-center justify-center opacity-50 cursor-not-allowed" disabled>Desabilitado</button>
+            </div>
+          </div>
+
+          <footer class="flex items-center justify-between px-8 md:px-12 py-6 bg-neutral-50 dark:bg-neutral-950/50 border-t border-neutral-100 dark:border-neutral-800">
+            <ul class="flex items-center">
+              <li class="w-9 h-9 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900">RS</li>
+              <li class="-ml-2 w-9 h-9 rounded-full bg-violet-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900">LK</li>
+            </ul>
+            <span class="text-sm font-semibold text-neutral-500 dark:text-neutral-400">5 variantes</span>
+          </footer>
+        </article>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mt-10">
+        <button class="btn-classes w-full sm:w-auto h-14 px-6 bg-blue-600 text-white rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-blue-700 transition shadow-md">Ver classes</button>
+        <button class="btn-code w-full sm:w-auto h-14 px-6 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md">Ver código</button>
+        <button class="btn-copy hidden w-full sm:w-auto h-14 px-6 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">Copiar</button>
+      </div>
+
+      <div class="classes-panel hidden mt-6 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 md:p-8">
+        <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-4">Classes usadas</p>
+        <div class="classes-list"></div>
+      </div>
+
+      <pre class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-6 border border-neutral-800 code-font"><code></code></pre>
+    </section>
+        <section class="example max-w-6xl mx-auto px-6 py-24">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight">Cards completos</h2>
+      <p class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg">O mesmo padrão visual aplicado em conteúdo real.</p>
+
+      <div class="preview grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <article class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-xl p-8 flex flex-col gap-6 hover:shadow-2xl transition-shadow">
+          <header class="flex items-center justify-between">
+            <time class="text-sm font-medium text-neutral-500 dark:text-neutral-400">8 de junho, 2026</time>
+          </header>
+          <div class="space-y-3">
+            <h3 class="font-display text-2xl font-bold text-blue-600 dark:text-blue-400">Design System</h3>
+            <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">Definir classes base, paleta e tipografia.</p>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-sm font-medium">
+              <span class="text-neutral-500 dark:text-neutral-400">Progresso</span>
+              <span class="text-neutral-900 dark:text-white font-bold">60%</span>
+            </div>
+            <div class="h-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden">
+              <div class="h-full bg-blue-500 rounded-full w-[60%]"></div>
+            </div>
+          </div>
+          <footer class="flex items-center justify-between pt-5 border-t border-neutral-100 dark:border-neutral-800">
+            <ul class="flex items-center">
+              <li class="w-10 h-10 rounded-full bg-blue-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900">RS</li>
+            </ul>
+            <button type="button" class="text-sm font-semibold bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition">Em 2 dias</button>
+          </footer>
+        </article>
+
+        <article class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-xl p-8 flex flex-col gap-6 hover:shadow-2xl transition-shadow">
+          <header class="flex items-center justify-between">
+            <time class="text-sm font-medium text-neutral-500 dark:text-neutral-400">12 de junho, 2026</time>
+          </header>
+          <div class="space-y-3">
+            <h3 class="font-display text-2xl font-bold text-emerald-600 dark:text-emerald-400">Apresentação</h3>
+            <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">Montar os slides no Canva.</p>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-sm font-medium">
+              <span class="text-neutral-500 dark:text-neutral-400">Progresso</span>
+              <span class="text-neutral-900 dark:text-white font-bold">85%</span>
+            </div>
+            <div class="h-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden">
+              <div class="h-full bg-emerald-500 rounded-full w-[85%]"></div>
+            </div>
+          </div>
+          <footer class="flex items-center justify-between pt-5 border-t border-neutral-100 dark:border-neutral-800">
+            <ul class="flex items-center">
+              <li class="w-10 h-10 rounded-full bg-emerald-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900">RS</li>
+            </ul>
+            <button type="button" class="text-sm font-semibold bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition">1 dia</button>
+          </footer>
+        </article>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mt-10">
+        <button class="btn-classes w-full sm:w-auto h-14 px-6 bg-blue-600 text-white rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-blue-700 transition shadow-md">Ver classes</button>
+        <button class="btn-code w-full sm:w-auto h-14 px-6 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md">Ver código</button>
+        <button class="btn-copy hidden w-full sm:w-auto h-14 px-6 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">Copiar</button>
+      </div>
+
+      <div class="classes-panel hidden mt-6 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 md:p-8">
+        <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-4">Classes usadas</p>
+        <div class="classes-list"></div>
+      </div>
+
+      <pre class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-6 border border-neutral-800 code-font"><code></code></pre>
+    </section>        <!-- ===================== QUIZ ===================== -->
+    <section class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight">
+        Mini-jogo · Tailwind Builder
+      </h2>
+      <p class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg">
+        Complete o HTML com a classe correta antes do tempo acabar. Passe o mouse nas opções para <strong class="text-neutral-900 dark:text-white font-semibold">pré-visualizar</strong> o efeito.
+      </p>
+
+      <div class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden">
+
+        <!-- START -->
+        <div id="start-screen" class="p-8 md:p-16 flex flex-col items-center text-center space-y-6">
+          <span class="inline-block bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+            Seção 08 · Jogo
           </span>
-
-          <h1
-            id="hero-title"
-            class="font-display text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter text-neutral-900 dark:text-white"
-          ></h1>
-
-          <p
-            class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed mb-10"
-          >
-            Um site que se explica. Feito 100% com
-            <strong class="text-neutral-900 dark:text-white font-semibold"
-              >Tailwind CSS</strong
-            >
-            — clique em "Ver código" para ver o HTML exato de cada seção.
+          <h3 class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white tracking-tight">
+            Tailwind <span class="text-blue-600 dark:text-blue-400">Builder</span>
+          </h3>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-md leading-relaxed">
+            6 missões, 15 segundos cada. Acerte a classe e ganhe pontos.
           </p>
-
-          <div
-            class="inline-block group relative bg-gradient-to-b from-black/10 to-white/10 dark:from-white/10 dark:to-black/10 p-px rounded-2xl backdrop-blur-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
-            <button
-              type="button"
-              class="flex items-center justify-center rounded-[1.15rem] px-10 h-16 text-lg font-semibold backdrop-blur-md bg-white/95 hover:bg-white dark:bg-neutral-900/95 dark:hover:bg-neutral-900 text-neutral-900 dark:text-white transition-all duration-300 group-hover:-translate-y-0.5 border border-black/10 dark:border-white/10"
-            >
-              <span>Ver demonstração</span>
-              <span
-                class="ml-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300"
-              >
-                →
-              </span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================================================
-         TIPOGRAFIA — como "Card"
-    =================================================== -->
-      <section class="example max-w-6xl mx-auto px-6 py-24">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight"
-        >
-          Tipografia
-        </h2>
-        <p
-          class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg"
-        >
-          Escala fixa de tamanhos e pesos. Cada card a seguir é uma seção
-          inteira deste site — e todos seguem o mesmo padrão visual:
-          <em class="not-italic font-semibold text-neutral-900 dark:text-white"
-            >header → body → footer</em
-          >.
-        </p>
-
-        <div class="preview">
-          <article
-            class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden"
-          >
-            <header
-              class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800"
-            >
-              <div class="flex items-center gap-3">
-                <span
-                  class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400"
-                  >Seção 01</span
-                >
-                <span class="text-neutral-300 dark:text-neutral-700">·</span>
-                <span
-                  class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                  >Tipografia</span
-                >
-              </div>
-              <button
-                type="button"
-                aria-label="Mais opções"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="p-8 md:p-14">
-              <h3
-                class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight"
-              >
-                Escala tipográfica
-              </h3>
-              <p
-                class="text-lg text-neutral-600 dark:text-neutral-400 mb-12 max-w-2xl leading-relaxed"
-              >
-                Do
-                <code
-                  class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-                  >text-xs</code
-                >
-                ao
-                <code
-                  class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-                  >text-9xl</code
-                >
-                e do
-                <code
-                  class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-                  >font-light</code
-                >
-                ao
-                <code
-                  class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-                  >font-black</code
-                >. Mesma escala em todo projeto.
-              </p>
-
-              <div class="space-y-4 border-l-2 border-blue-500 pl-6">
-                <p class="text-xs text-neutral-500">
-                  text-xs — legenda, texto auxiliar
-                </p>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                  text-sm — texto pequeno
-                </p>
-                <p class="text-base text-neutral-700 dark:text-neutral-300">
-                  text-base — texto padrão do corpo
-                </p>
-                <p class="text-lg text-neutral-700 dark:text-neutral-300">
-                  text-lg — texto de destaque
-                </p>
-                <p
-                  class="text-xl font-medium text-neutral-800 dark:text-neutral-200"
-                >
-                  text-xl font-medium — subtítulo
-                </p>
-                <p
-                  class="text-2xl font-semibold text-neutral-800 dark:text-neutral-200"
-                >
-                  text-2xl font-semibold — subtítulo forte
-                </p>
-                <p class="text-3xl font-bold text-neutral-900 dark:text-white">
-                  text-3xl font-bold — título
-                </p>
-                <p
-                  class="font-display text-4xl md:text-5xl font-black text-neutral-900 dark:text-white"
-                >
-                  text-4xl font-black — destaque
-                </p>
-              </div>
-            </div>
-
-            <footer
-              class="flex items-center justify-between px-8 md:px-12 py-6 bg-neutral-50 dark:bg-neutral-950/50 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-9 h-9 rounded-full bg-blue-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  RS
-                </li>
-                <li
-                  class="-ml-2 w-9 h-9 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  SR
-                </li>
-                <li class="-ml-2">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-9 h-9 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <span
-                class="text-sm font-semibold text-neutral-500 dark:text-neutral-400"
-                >Leitura · 2 min</span
-              >
-            </footer>
-          </article>
-        </div>
-
-        <pre
-          class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-8 border border-neutral-800"
-        ><code></code></pre>
-
-        <div class="flex flex-wrap gap-3 mt-10">
-          <button
-            class="toggle w-full sm:w-[280px] h-14 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md"
-          >
-            Ver código
-          </button>
-          <button
-            class="copy hidden w-full sm:w-[280px] h-14 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition"
-          >
-            Copiar
+          <button onclick="startGame()" class="w-full sm:w-auto h-14 px-10 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md">
+            Iniciar missão →
           </button>
         </div>
-      </section>
 
-      <!-- ==================================================
-         BOTÕES — como "Card"
-    =================================================== -->
-      <section class="example max-w-6xl mx-auto px-6 py-24">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight"
-        >
-          Botões &amp; interação
-        </h2>
-        <p
-          class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg"
-        >
-          Prefixos como
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >hover:</code
-          >,
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >active:</code
-          >
-          e
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >disabled:</code
-          >
-          mudam o visual só em estados específicos.
-        </p>
-
-        <div class="preview">
-          <article
-            class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden"
-          >
-            <header
-              class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800"
-            >
-              <div class="flex items-center gap-3">
-                <span
-                  class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400"
-                  >Seção 02</span
-                >
-                <span class="text-neutral-300 dark:text-neutral-700">·</span>
-                <span
-                  class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                  >Botões</span
-                >
+        <!-- GAME -->
+        <div id="game-screen" class="hidden flex-col">
+          <header class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">Seção 08</span>
+              <span class="text-neutral-300 dark:text-neutral-700">·</span>
+              <span class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Jogo</span>
+            </div>
+            <div class="flex items-center gap-6">
+              <div class="text-right">
+                <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">Missão</p>
+                <p id="level-display" class="text-lg font-bold text-neutral-900 dark:text-white">1 / 6</p>
               </div>
-              <button
-                type="button"
-                aria-label="Mais opções"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="p-8 md:p-14">
-              <h3
-                class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight"
-              >
-                Estados de um botão
-              </h3>
-              <p
-                class="text-lg text-neutral-600 dark:text-neutral-400 mb-12 max-w-2xl leading-relaxed"
-              >
-                Passe o mouse, clique ou tente clicar no desabilitado. Cada
-                efeito vem de uma única classe extra.
-              </p>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                <button
-                  class="h-14 bg-neutral-900 text-white rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 transition shadow-md"
-                >
-                  Primário
-                </button>
-                <button
-                  class="h-14 bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition"
-                >
-                  Secundário
-                </button>
-                <button
-                  class="h-14 bg-emerald-600 text-white rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-emerald-700 active:scale-95 transition shadow-md"
-                >
-                  Sucesso
-                </button>
-                <button
-                  class="h-14 bg-blue-600 text-white rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/30 transition shadow-md"
-                >
-                  Focus ring
-                </button>
-                <button
-                  class="h-14 bg-red-600 text-white rounded-xl font-semibold text-lg flex items-center justify-center opacity-50 cursor-not-allowed"
-                  disabled
-                >
-                  Desabilitado
-                </button>
+              <div class="text-right">
+                <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">Pontos</p>
+                <p id="score-display" class="text-lg font-bold text-emerald-600 dark:text-emerald-400">0</p>
               </div>
             </div>
+          </header>
 
-            <footer
-              class="flex items-center justify-between px-8 md:px-12 py-6 bg-neutral-50 dark:bg-neutral-950/50 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-9 h-9 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  RS
-                </li>
-                <li
-                  class="-ml-2 w-9 h-9 rounded-full bg-violet-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  LK
-                </li>
-                <li class="-ml-2">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-9 h-9 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <span
-                class="text-sm font-semibold text-neutral-500 dark:text-neutral-400"
-                >5 variantes</span
-              >
-            </footer>
-          </article>
-        </div>
-
-        <pre
-          class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-8 border border-neutral-800"
-        ><code></code></pre>
-
-        <div class="flex flex-wrap gap-3 mt-10">
-          <button
-            class="toggle w-full sm:w-[280px] h-14 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md"
-          >
-            Ver código
-          </button>
-          <button
-            class="copy hidden w-full sm:w-[280px] h-14 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition"
-          >
-            Copiar
-          </button>
-        </div>
-      </section>
-
-      <!-- ==================================================
-         CARDS — 2 por linha, maiores
-    =================================================== -->
-      <section class="example max-w-6xl mx-auto px-6 py-24">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight"
-        >
-          Cards completos
-        </h2>
-        <p
-          class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg"
-        >
-          O mesmo padrão visual aplicado em
-          <strong class="text-neutral-900 dark:text-white font-semibold"
-            >conteúdo real</strong
-          >: header com data, body com título/progresso, footer com avatares.
-        </p>
-
-        <div class="preview grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <!-- CARD 1 · Azul -->
-          <article
-            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-xl p-8 flex flex-col gap-6 hover:shadow-2xl transition-shadow"
-          >
-            <header class="flex items-center justify-between">
-              <time
-                class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                >8 de junho, 2026</time
-              >
-              <button
-                type="button"
-                aria-label="Mais"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="space-y-3">
-              <h3
-                class="font-display text-2xl font-bold text-blue-600 dark:text-blue-400"
-              >
-                Design System
-              </h3>
-              <p
-                class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed"
-              >
-                Definir classes base, paleta e tipografia do projeto inteiro.
-              </p>
+          <div class="p-6 md:p-10 space-y-5">
+            <div class="relative bg-neutral-50 dark:bg-neutral-950/50 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 md:p-8 overflow-hidden">
+              <div class="absolute top-0 left-0 h-1.5 w-full bg-neutral-200 dark:bg-neutral-800">
+                <div id="time-bar" class="h-full bg-gradient-to-r from-emerald-500 to-red-500 w-full transition-all duration-1000 linear"></div>
+              </div>
+              <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">Missão</p>
+              <h3 id="mission-text" class="font-display text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white leading-tight">Deixe o texto azul!</h3>
             </div>
 
-            <div class="space-y-3">
-              <div
-                class="flex items-center justify-between text-sm font-medium"
-              >
-                <span class="text-neutral-500 dark:text-neutral-400"
-                  >Progresso</span
-                >
-                <span class="text-neutral-900 dark:text-white font-bold"
-                  >60%</span
-                >
-              </div>
-              <div
-                class="h-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden"
-              >
-                <div class="h-full bg-blue-500 rounded-full w-[60%]"></div>
-              </div>
-            </div>
-
-            <footer
-              class="flex items-center justify-between pt-5 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-10 h-10 rounded-full bg-blue-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  RS
-                </li>
-                <li
-                  class="-ml-2.5 w-10 h-10 rounded-full bg-emerald-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  SR
-                </li>
-                <li class="-ml-2.5">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-10 h-10 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <button
-                type="button"
-                class="text-sm font-semibold bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition"
-              >
-                Em 2 dias
-              </button>
-            </footer>
-          </article>
-
-          <!-- CARD 2 · Emerald -->
-          <article
-            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-xl p-8 flex flex-col gap-6 hover:shadow-2xl transition-shadow"
-          >
-            <header class="flex items-center justify-between">
-              <time
-                class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                >12 de junho, 2026</time
-              >
-              <button
-                type="button"
-                aria-label="Mais"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="space-y-3">
-              <h3
-                class="font-display text-2xl font-bold text-emerald-600 dark:text-emerald-400"
-              >
-                Apresentação
-              </h3>
-              <p
-                class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed"
-              >
-                Montar os slides no Canva e ensaiar a parte teórica com o grupo.
-              </p>
-            </div>
-
-            <div class="space-y-3">
-              <div
-                class="flex items-center justify-between text-sm font-medium"
-              >
-                <span class="text-neutral-500 dark:text-neutral-400"
-                  >Progresso</span
-                >
-                <span class="text-neutral-900 dark:text-white font-bold"
-                  >85%</span
-                >
-              </div>
-              <div
-                class="h-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden"
-              >
-                <div class="h-full bg-emerald-500 rounded-full w-[85%]"></div>
-              </div>
-            </div>
-
-            <footer
-              class="flex items-center justify-between pt-5 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-10 h-10 rounded-full bg-emerald-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  RS
-                </li>
-                <li
-                  class="-ml-2.5 w-10 h-10 rounded-full bg-violet-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  LK
-                </li>
-                <li class="-ml-2.5">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-10 h-10 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <button
-                type="button"
-                class="text-sm font-semibold bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition"
-              >
-                1 dia
-              </button>
-            </footer>
-          </article>
-
-          <!-- CARD 3 · Violet -->
-          <article
-            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-xl p-8 flex flex-col gap-6 hover:shadow-2xl transition-shadow"
-          >
-            <header class="flex items-center justify-between">
-              <time
-                class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                >6 de outubro, 2026</time
-              >
-              <button
-                type="button"
-                aria-label="Mais"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="space-y-3">
-              <h3
-                class="font-display text-2xl font-bold text-violet-600 dark:text-violet-400"
-              >
-                Apresentação final
-              </h3>
-              <p
-                class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed"
-              >
-                Subir no auditório com demo, atividade guiada e todos os
-                materiais prontos.
-              </p>
-            </div>
-
-            <div class="space-y-3">
-              <div
-                class="flex items-center justify-between text-sm font-medium"
-              >
-                <span class="text-neutral-500 dark:text-neutral-400"
-                  >Progresso</span
-                >
-                <span class="text-neutral-900 dark:text-white font-bold"
-                  >30%</span
-                >
-              </div>
-              <div
-                class="h-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden"
-              >
-                <div class="h-full bg-violet-500 rounded-full w-[30%]"></div>
-              </div>
-            </div>
-
-            <footer
-              class="flex items-center justify-between pt-5 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-10 h-10 rounded-full bg-violet-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  IS
-                </li>
-                <li
-                  class="-ml-2.5 w-10 h-10 rounded-full bg-blue-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  SR
-                </li>
-                <li class="-ml-2.5">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-10 h-10 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <button
-                type="button"
-                class="text-sm font-semibold bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition"
-              >
-                Em 5 dias
-              </button>
-            </footer>
-          </article>
-
-          <!-- CARD 4 · Sky -->
-          <article
-            class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-xl p-8 flex flex-col gap-6 hover:shadow-2xl transition-shadow"
-          >
-            <header class="flex items-center justify-between">
-              <time
-                class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                >20 de setembro, 2026</time
-              >
-              <button
-                type="button"
-                aria-label="Mais"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="space-y-3">
-              <h3
-                class="font-display text-2xl font-bold text-sky-600 dark:text-sky-400"
-              >
-                Demonstração prática
-              </h3>
-              <p
-                class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed"
-              >
-                Ensaiar o passo a passo guiado e o portfólio ao vivo.
-              </p>
-            </div>
-
-            <div class="space-y-3">
-              <div
-                class="flex items-center justify-between text-sm font-medium"
-              >
-                <span class="text-neutral-500 dark:text-neutral-400"
-                  >Progresso</span
-                >
-                <span class="text-neutral-900 dark:text-white font-bold"
-                  >45%</span
-                >
-              </div>
-              <div
-                class="h-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden"
-              >
-                <div class="h-full bg-sky-500 rounded-full w-[45%]"></div>
-              </div>
-            </div>
-
-            <footer
-              class="flex items-center justify-between pt-5 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-10 h-10 rounded-full bg-sky-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  GL
-                </li>
-                <li
-                  class="-ml-2.5 w-10 h-10 rounded-full bg-amber-500 text-white text-sm font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  EC
-                </li>
-                <li class="-ml-2.5">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-10 h-10 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <button
-                type="button"
-                class="text-sm font-semibold bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition"
-              >
-                Em 3 dias
-              </button>
-            </footer>
-          </article>
-        </div>
-
-        <pre
-          class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-8 border border-neutral-800"
-        ><code></code></pre>
-
-        <div class="flex flex-wrap gap-3 mt-10">
-          <button
-            class="toggle w-full sm:w-[280px] h-14 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md"
-          >
-            Ver código
-          </button>
-          <button
-            class="copy hidden w-full sm:w-[280px] h-14 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition"
-          >
-            Copiar
-          </button>
-        </div>
-      </section>
-      <!-- ==================================================
-     CORES
-=================================================== -->
-      <section class="example max-w-6xl mx-auto px-6 py-24">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight"
-        >
-          Cores
-        </h2>
-        <p
-          class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg"
-        >
-          Cada cor tem 10 tons numerados de
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >50</code
-          >
-          a
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >950</code
-          >. A escala é a mesma em todas as famílias — você aprende uma vez e
-          usa em tudo.
-        </p>
-
-        <div class="preview">
-          <article
-            class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden"
-          >
-            <header
-              class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800"
-            >
-              <div class="flex items-center gap-3">
-                <span
-                  class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400"
-                  >Seção 04</span
-                >
-                <span class="text-neutral-300 dark:text-neutral-700">·</span>
-                <span
-                  class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                  >Cores</span
-                >
-              </div>
-              <button
-                type="button"
-                aria-label="Mais opções"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="p-8 md:p-14">
-              <h3
-                class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight"
-              >
-                Escala de uma cor
-              </h3>
-              <p
-                class="text-lg text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl leading-relaxed"
-              >
-                Do
-                <strong class="text-neutral-900 dark:text-white font-semibold"
-                  >azul mais claro</strong
-                >
-                ao
-                <strong class="text-neutral-900 dark:text-white font-semibold"
-                  >mais escuro</strong
-                >. Sempre os mesmos 10 degraus.
-              </p>
-
-              <div class="grid grid-cols-5 md:grid-cols-10 gap-2 mb-4">
-                <div class="text-center">
-                  <div
-                    class="h-16 rounded-lg bg-blue-50 border border-neutral-200 dark:border-neutral-700"
-                  ></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">50</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div class="flex flex-col border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden">
+                <div class="bg-neutral-50 dark:bg-neutral-950/50 px-4 py-2.5 border-b border-neutral-200 dark:border-neutral-800 flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+                  <span class="ml-2 text-xs font-mono text-neutral-500">preview.html</span>
                 </div>
-                <div class="text-center">
-                  <div class="h-16 rounded-lg bg-blue-100"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">100</p>
-                </div>
-                <div class="text-center">
-                  <div class="h-16 rounded-lg bg-blue-200"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">200</p>
-                </div>
-                <div class="text-center">
-                  <div class="h-16 rounded-lg bg-blue-300"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">300</p>
-                </div>
-                <div class="text-center">
-                  <div class="h-16 rounded-lg bg-blue-400"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">400</p>
-                </div>
-                <div class="text-center">
-                  <div class="h-16 rounded-lg bg-blue-500"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">500</p>
-                </div>
-                <div class="text-center">
-                  <div class="h-16 rounded-lg bg-blue-600"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">600</p>
-                </div>
-                <div class="text-center">
-                  <div class="h-16 rounded-lg bg-blue-700"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">700</p>
-                </div>
-                <div class="text-center">
-                  <div class="h-16 rounded-lg bg-blue-800"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">800</p>
-                </div>
-                <div class="text-center">
-                  <div class="h-16 rounded-lg bg-blue-900"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">900</p>
-                </div>
+                <div id="live-preview" class="flex-1 p-8 flex items-center justify-center bg-white min-h-[220px]"></div>
               </div>
 
-              <h4
-                class="text-lg font-bold text-neutral-900 dark:text-white mb-4 mt-12"
-              >
-                Famílias no tom 500
-              </h4>
-              <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-                <div class="rounded-xl overflow-hidden">
-                  <div class="h-14 bg-red-500"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">red-500</p>
+              <div class="flex flex-col border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden">
+                <div class="bg-neutral-50 dark:bg-neutral-950/50 px-4 py-2.5 border-b border-neutral-200 dark:border-neutral-800 flex items-center justify-between">
+                  <span class="text-xs font-mono text-neutral-500">index.html</span>
+                  <span class="text-xs font-mono text-blue-600 dark:text-blue-400">HTML</span>
                 </div>
-                <div class="rounded-xl overflow-hidden">
-                  <div class="h-14 bg-amber-500"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">
-                    amber-500
-                  </p>
-                </div>
-                <div class="rounded-xl overflow-hidden">
-                  <div class="h-14 bg-emerald-500"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">
-                    emerald-500
-                  </p>
-                </div>
-                <div class="rounded-xl overflow-hidden">
-                  <div class="h-14 bg-blue-500"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">
-                    blue-500
-                  </p>
-                </div>
-                <div class="rounded-xl overflow-hidden">
-                  <div class="h-14 bg-violet-500"></div>
-                  <p class="mt-1 text-xs font-mono text-neutral-500">
-                    violet-500
-                  </p>
+                <div class="flex-1 p-6 flex flex-col justify-center font-mono text-sm bg-neutral-900 text-neutral-300 min-h-[220px] code-font">
+                  <div id="code-display" class="leading-relaxed"></div>
                 </div>
               </div>
             </div>
 
-            <footer
-              class="flex items-center justify-between px-8 md:px-12 py-6 bg-neutral-50 dark:bg-neutral-950/50 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-9 h-9 rounded-full bg-amber-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  RS
-                </li>
-                <li
-                  class="-ml-2 w-9 h-9 rounded-full bg-blue-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  SR
-                </li>
-                <li class="-ml-2">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-9 h-9 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <span
-                class="text-sm font-semibold text-neutral-500 dark:text-neutral-400"
-                >10 tons · 20 famílias</span
-              >
-            </footer>
-          </article>
-        </div>
-
-        <pre
-          class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-8 border border-neutral-800"
-        ><code></code></pre>
-
-        <div class="flex flex-wrap gap-3 mt-10">
-          <button
-            class="toggle w-full sm:w-[280px] h-14 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md"
-          >
-            Ver código
-          </button>
-          <button
-            class="copy hidden w-full sm:w-[280px] h-14 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition"
-          >
-            Copiar
-          </button>
-        </div>
-      </section>
-      <!-- ==================================================
-     ESPAÇAMENTO
-=================================================== -->
-      <section class="example max-w-6xl mx-auto px-6 py-24">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight"
-        >
-          Espaçamento
-        </h2>
-        <p
-          class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg"
-        >
-          Assim como as cores, os espaçamentos têm uma escala fixa:
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >1</code
-          >
-          = 4px,
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >4</code
-          >
-          = 16px,
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >8</code
-          >
-          = 32px.
-        </p>
-
-        <div class="preview">
-          <article
-            class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden"
-          >
-            <header
-              class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800"
-            >
-              <div class="flex items-center gap-3">
-                <span
-                  class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400"
-                  >Seção 05</span
-                >
-                <span class="text-neutral-300 dark:text-neutral-700">·</span>
-                <span
-                  class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                  >Espaçamento</span
-                >
-              </div>
-              <button
-                type="button"
-                aria-label="Mais opções"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="p-8 md:p-14">
-              <h3
-                class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight"
-              >
-                Padding · Gap · Margin
-              </h3>
-              <p
-                class="text-lg text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl leading-relaxed"
-              >
-                Padding é o espaço
-                <strong class="text-neutral-900 dark:text-white">dentro</strong>
-                do elemento. Gap é o espaço
-                <strong class="text-neutral-900 dark:text-white">entre</strong>
-                itens de um flex/grid. Margin é o espaço
-                <strong class="text-neutral-900 dark:text-white">fora</strong>.
-              </p>
-
-              <h4
-                class="text-lg font-bold text-neutral-900 dark:text-white mb-4"
-              >
-                Padding —
-                <code
-                  class="text-sm font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded"
-                  >p-*</code
-                >
-              </h4>
-              <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-12">
-                <div class="bg-sky-100 dark:bg-sky-900/30 rounded-lg p-2">
-                  <div
-                    class="bg-sky-500 text-white text-xs font-bold text-center rounded py-3"
-                  >
-                    p-2
-                  </div>
-                </div>
-                <div class="bg-sky-100 dark:bg-sky-900/30 rounded-lg p-4">
-                  <div
-                    class="bg-sky-500 text-white text-xs font-bold text-center rounded py-3"
-                  >
-                    p-4
-                  </div>
-                </div>
-                <div class="bg-sky-100 dark:bg-sky-900/30 rounded-lg p-6">
-                  <div
-                    class="bg-sky-500 text-white text-xs font-bold text-center rounded py-3"
-                  >
-                    p-6
-                  </div>
-                </div>
-                <div class="bg-sky-100 dark:bg-sky-900/30 rounded-lg p-8">
-                  <div
-                    class="bg-sky-500 text-white text-xs font-bold text-center rounded py-3"
-                  >
-                    p-8
-                  </div>
-                </div>
-                <div class="bg-sky-100 dark:bg-sky-900/30 rounded-lg p-10">
-                  <div
-                    class="bg-sky-500 text-white text-xs font-bold text-center rounded py-3"
-                  >
-                    p-10
-                  </div>
-                </div>
-              </div>
-
-              <h4
-                class="text-lg font-bold text-neutral-900 dark:text-white mb-4"
-              >
-                Gap —
-                <code
-                  class="text-sm font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded"
-                  >gap-*</code
-                >
-              </h4>
-              <div class="space-y-4 mb-4">
-                <div>
-                  <p class="text-sm font-mono text-neutral-500 mb-2">gap-2</p>
-                  <div class="flex gap-2">
-                    <div class="h-10 flex-1 bg-emerald-500 rounded"></div>
-                    <div class="h-10 flex-1 bg-emerald-500 rounded"></div>
-                    <div class="h-10 flex-1 bg-emerald-500 rounded"></div>
-                  </div>
-                </div>
-                <div>
-                  <p class="text-sm font-mono text-neutral-500 mb-2">gap-4</p>
-                  <div class="flex gap-4">
-                    <div class="h-10 flex-1 bg-emerald-500 rounded"></div>
-                    <div class="h-10 flex-1 bg-emerald-500 rounded"></div>
-                    <div class="h-10 flex-1 bg-emerald-500 rounded"></div>
-                  </div>
-                </div>
-                <div>
-                  <p class="text-sm font-mono text-neutral-500 mb-2">gap-8</p>
-                  <div class="flex gap-8">
-                    <div class="h-10 flex-1 bg-emerald-500 rounded"></div>
-                    <div class="h-10 flex-1 bg-emerald-500 rounded"></div>
-                    <div class="h-10 flex-1 bg-emerald-500 rounded"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <footer
-              class="flex items-center justify-between px-8 md:px-12 py-6 bg-neutral-50 dark:bg-neutral-950/50 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-9 h-9 rounded-full bg-sky-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  RS
-                </li>
-                <li
-                  class="-ml-2 w-9 h-9 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  SR
-                </li>
-                <li class="-ml-2">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-9 h-9 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <span
-                class="text-sm font-semibold text-neutral-500 dark:text-neutral-400"
-                >1 unidade = 4px</span
-              >
-            </footer>
-          </article>
-        </div>
-
-        <pre
-          class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-8 border border-neutral-800"
-        ><code></code></pre>
-
-        <div class="flex flex-wrap gap-3 mt-10">
-          <button
-            class="toggle w-full sm:w-[280px] h-14 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md"
-          >
-            Ver código
-          </button>
-          <button
-            class="copy hidden w-full sm:w-[280px] h-14 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition"
-          >
-            Copiar
-          </button>
-        </div>
-      </section>
-      <!-- ==================================================
-     FLEX VS GRID
-=================================================== -->
-      <section class="example max-w-6xl mx-auto px-6 py-24">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight"
-        >
-          Flex vs Grid
-        </h2>
-        <p
-          class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg"
-        >
-          Os dois organizam itens, mas de formas diferentes.
-          <strong class="text-neutral-900 dark:text-white">Flex</strong> = linha
-          ou coluna.
-          <strong class="text-neutral-900 dark:text-white">Grid</strong> = grade
-          com linhas e colunas ao mesmo tempo.
-        </p>
-
-        <div class="preview">
-          <article
-            class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden"
-          >
-            <header
-              class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800"
-            >
-              <div class="flex items-center gap-3">
-                <span
-                  class="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400"
-                  >Seção 06</span
-                >
-                <span class="text-neutral-300 dark:text-neutral-700">·</span>
-                <span
-                  class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                  >Layout</span
-                >
-              </div>
-              <button
-                type="button"
-                aria-label="Mais opções"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="p-8 md:p-14">
-              <h3
-                class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight"
-              >
-                O mesmo conteúdo, dois layouts
-              </h3>
-              <p
-                class="text-lg text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl leading-relaxed"
-              >
-                Os 6 quadrados a seguir são idênticos. Só muda a classe do
-                container.
-              </p>
-
-              <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                  <p
-                    class="text-sm font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400 mb-3"
-                  >
-                    Flex
-                  </p>
-                  <div
-                    class="bg-violet-50 dark:bg-violet-950/30 border border-violet-200 dark:border-violet-900 rounded-xl p-4"
-                  >
-                    <div class="flex flex-wrap gap-3">
-                      <div class="w-12 h-12 bg-violet-500 rounded-lg"></div>
-                      <div class="w-12 h-12 bg-violet-500 rounded-lg"></div>
-                      <div class="w-12 h-12 bg-violet-500 rounded-lg"></div>
-                      <div class="w-12 h-12 bg-violet-500 rounded-lg"></div>
-                      <div class="w-12 h-12 bg-violet-500 rounded-lg"></div>
-                      <div class="w-12 h-12 bg-violet-500 rounded-lg"></div>
-                    </div>
-                  </div>
-                  <code class="block mt-3 text-xs font-mono text-neutral-500"
-                    >flex flex-wrap gap-3</code
-                  >
-                </div>
-
-                <div>
-                  <p
-                    class="text-sm font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-3"
-                  >
-                    Grid
-                  </p>
-                  <div
-                    class="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900 rounded-xl p-4"
-                  >
-                    <div class="grid grid-cols-3 gap-3">
-                      <div class="aspect-square bg-blue-500 rounded-lg"></div>
-                      <div class="aspect-square bg-blue-500 rounded-lg"></div>
-                      <div class="aspect-square bg-blue-500 rounded-lg"></div>
-                      <div class="aspect-square bg-blue-500 rounded-lg"></div>
-                      <div class="aspect-square bg-blue-500 rounded-lg"></div>
-                      <div class="aspect-square bg-blue-500 rounded-lg"></div>
-                    </div>
-                  </div>
-                  <code class="block mt-3 text-xs font-mono text-neutral-500"
-                    >grid grid-cols-3 gap-3</code
-                  >
-                </div>
-              </div>
-
-              <div
-                class="mt-10 p-5 bg-neutral-50 dark:bg-neutral-950/50 border border-neutral-200 dark:border-neutral-800 rounded-xl"
-              >
-                <p
-                  class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed"
-                >
-                  <strong class="text-neutral-900 dark:text-white"
-                    >Flex:</strong
-                  >
-                  os itens "fluem" em linha e quebram conforme o espaço.<br />
-                  <strong class="text-neutral-900 dark:text-white"
-                    >Grid:</strong
-                  >
-                  os itens obedecem a uma grade fixa de colunas.
-                </p>
-              </div>
-            </div>
-
-            <footer
-              class="flex items-center justify-between px-8 md:px-12 py-6 bg-neutral-50 dark:bg-neutral-950/50 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-9 h-9 rounded-full bg-violet-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  RS
-                </li>
-                <li
-                  class="-ml-2 w-9 h-9 rounded-full bg-blue-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  SR
-                </li>
-                <li class="-ml-2">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-9 h-9 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <span
-                class="text-sm font-semibold text-neutral-500 dark:text-neutral-400"
-                >2 ferramentas</span
-              >
-            </footer>
-          </article>
-        </div>
-
-        <pre
-          class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-8 border border-neutral-800"
-        ><code></code></pre>
-
-        <div class="flex flex-wrap gap-3 mt-10">
-          <button
-            class="toggle w-full sm:w-[280px] h-14 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md"
-          >
-            Ver código
-          </button>
-          <button
-            class="copy hidden w-full sm:w-[280px] h-14 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition"
-          >
-            Copiar
-          </button>
-        </div>
-      </section>
-      <!-- ==================================================
-     RESPONSIVO
-=================================================== -->
-      <section class="example max-w-6xl mx-auto px-6 py-24">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight"
-        >
-          Responsivo
-        </h2>
-        <p
-          class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg"
-        >
-          Prefixos como
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >sm:</code
-          >,
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >md:</code
-          >,
-          <code
-            class="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-base font-mono"
-            >lg:</code
-          >
-          aplicam estilos só a partir de um tamanho de tela.
-        </p>
-
-        <div class="preview">
-          <article
-            class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden"
-          >
-            <header
-              class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800"
-            >
-              <div class="flex items-center gap-3">
-                <span
-                  class="text-xs font-bold uppercase tracking-widest text-rose-600 dark:text-rose-400"
-                  >Seção 07</span
-                >
-                <span class="text-neutral-300 dark:text-neutral-700">·</span>
-                <span
-                  class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                  >Responsivo</span
-                >
-              </div>
-              <button
-                type="button"
-                aria-label="Mais opções"
-                class="p-2 rounded-lg text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </header>
-
-            <div class="p-8 md:p-14">
-              <h3
-                class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight"
-              >
-                Redimensione a janela
-              </h3>
-              <p
-                class="text-lg text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl leading-relaxed"
-              >
-                Os três blocos a seguir
-                <strong class="text-neutral-900 dark:text-white"
-                  >mudam de cor, tamanho e direção</strong
-                >
-                conforme você estreita ou alarga o navegador.
-              </p>
-
-              <div class="space-y-6">
-                <div>
-                  <p class="text-sm font-mono text-neutral-500 mb-3">
-                    bg-red-500 → md:bg-blue-500 → lg:bg-emerald-500
-                  </p>
-                  <div
-                    class="h-16 rounded-xl bg-red-500 md:bg-blue-500 lg:bg-emerald-500 transition-colors"
-                  ></div>
-                </div>
-
-                <div>
-                  <p class="text-sm font-mono text-neutral-500 mb-3">
-                    text-base → md:text-2xl → lg:text-4xl
-                  </p>
-                  <p
-                    class="text-base md:text-2xl lg:text-4xl font-bold text-neutral-900 dark:text-white transition-all"
-                  >
-                    Este texto cresce conforme a tela aumenta.
-                  </p>
-                </div>
-
-                <div>
-                  <p class="text-sm font-mono text-neutral-500 mb-3">
-                    flex-col → md:flex-row
-                  </p>
-                  <div class="flex flex-col md:flex-row gap-3">
-                    <div
-                      class="flex-1 h-14 bg-rose-500 rounded-lg flex items-center justify-center text-white text-sm font-bold"
-                    >
-                      Item 1
-                    </div>
-                    <div
-                      class="flex-1 h-14 bg-rose-500 rounded-lg flex items-center justify-center text-white text-sm font-bold"
-                    >
-                      Item 2
-                    </div>
-                    <div
-                      class="flex-1 h-14 bg-rose-500 rounded-lg flex items-center justify-center text-white text-sm font-bold"
-                    >
-                      Item 3
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
-                <div
-                  class="p-3 bg-neutral-50 dark:bg-neutral-950/50 border border-neutral-200 dark:border-neutral-800 rounded-lg text-center"
-                >
-                  <p class="text-xs font-mono text-neutral-500">Base</p>
-                  <p class="text-sm font-bold text-neutral-900 dark:text-white">
-                    &lt; 640px
-                  </p>
-                </div>
-                <div
-                  class="p-3 bg-neutral-50 dark:bg-neutral-950/50 border border-neutral-200 dark:border-neutral-800 rounded-lg text-center"
-                >
-                  <p class="text-xs font-mono text-neutral-500">sm:</p>
-                  <p class="text-sm font-bold text-neutral-900 dark:text-white">
-                    ≥ 640px
-                  </p>
-                </div>
-                <div
-                  class="p-3 bg-neutral-50 dark:bg-neutral-950/50 border border-neutral-200 dark:border-neutral-800 rounded-lg text-center"
-                >
-                  <p class="text-xs font-mono text-neutral-500">md:</p>
-                  <p class="text-sm font-bold text-neutral-900 dark:text-white">
-                    ≥ 768px
-                  </p>
-                </div>
-                <div
-                  class="p-3 bg-neutral-50 dark:bg-neutral-950/50 border border-neutral-200 dark:border-neutral-800 rounded-lg text-center"
-                >
-                  <p class="text-xs font-mono text-neutral-500">lg:</p>
-                  <p class="text-sm font-bold text-neutral-900 dark:text-white">
-                    ≥ 1024px
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <footer
-              class="flex items-center justify-between px-8 md:px-12 py-6 bg-neutral-50 dark:bg-neutral-950/50 border-t border-neutral-100 dark:border-neutral-800"
-            >
-              <ul class="flex items-center">
-                <li
-                  class="w-9 h-9 rounded-full bg-rose-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  RS
-                </li>
-                <li
-                  class="-ml-2 w-9 h-9 rounded-full bg-amber-500 text-white text-xs font-bold flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                >
-                  LK
-                </li>
-                <li class="-ml-2">
-                  <button
-                    type="button"
-                    aria-label="Adicionar"
-                    class="w-9 h-9 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition flex items-center justify-center ring-2 ring-white dark:ring-neutral-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-              <span
-                class="text-sm font-semibold text-neutral-500 dark:text-neutral-400"
-                >Mobile-first</span
-              >
-            </footer>
-          </article>
-        </div>
-
-        <pre
-          class="code hidden bg-neutral-900 text-neutral-300 p-6 rounded-2xl overflow-x-auto text-sm leading-relaxed font-mono my-8 border border-neutral-800"
-        ><code></code></pre>
-
-        <div class="flex flex-wrap gap-3 mt-10">
-          <button
-            class="toggle w-full sm:w-[280px] h-14 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md"
-          >
-            Ver código
-          </button>
-          <button
-            class="copy hidden w-full sm:w-[280px] h-14 bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 rounded-xl font-semibold text-lg flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition"
-          >
-            Copiar
-          </button>
-        </div>
-      </section>
-      <!-- ==================================================
-     MINI-JOGO · TAILWIND BUILDER
-=================================================== -->
-      <section id="jogo" class="max-w-6xl mx-auto px-6 py-24">
-        <!-- Título da seção -->
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight"
-        >
-          Mini-jogo · Tailwind Builder
-        </h2>
-        <p
-          class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-lg"
-        >
-          Complete o HTML com a classe correta antes do tempo acabar. Passe o
-          mouse nas opções para
-          <strong class="text-neutral-900 dark:text-white font-semibold"
-            >pré-visualizar</strong
-          >
-          o efeito em tempo real.
-        </p>
-
-        <!-- Container do jogo -->
-        <div
-          class="max-w-5xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl overflow-hidden"
-        >
-          <!-- ===================== START SCREEN ===================== -->
-          <div
-            id="start-screen"
-            class="p-8 md:p-16 flex flex-col items-center text-center space-y-6"
-          >
-            <span
-              class="inline-block bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase"
-            >
-              Seção 08 · Jogo
-            </span>
-
-            <h3
-              class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white tracking-tight"
-            >
-              Tailwind
-              <span class="text-blue-600 dark:text-blue-400">Builder</span>
-            </h3>
-
-            <p
-              class="text-lg text-neutral-600 dark:text-neutral-400 max-w-md leading-relaxed"
-            >
-              Aprenda Tailwind consertando o código antes que o tempo acabe. 6
-              missões, 15 segundos cada.
-            </p>
-
-            <button
-              onclick="startGame()"
-              class="w-full sm:w-auto h-14 px-10 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md"
-            >
-              Iniciar missão →
-            </button>
-          </div>
-
-          <!-- ===================== GAME SCREEN ===================== -->
-          <div id="game-screen" class="hidden flex-col">
-            <!-- Header do jogo: Missão / Pontuação -->
-            <header
-              class="flex items-center justify-between px-8 md:px-12 py-6 border-b border-neutral-100 dark:border-neutral-800"
-            >
-              <div class="flex items-center gap-3">
-                <span
-                  class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400"
-                  >Seção 08</span
-                >
-                <span class="text-neutral-300 dark:text-neutral-700">·</span>
-                <span
-                  class="text-sm font-medium text-neutral-500 dark:text-neutral-400"
-                  >Jogo</span
-                >
-              </div>
-              <div class="flex items-center gap-6">
-                <div class="text-right">
-                  <p
-                    class="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
-                  >
-                    Missão
-                  </p>
-                  <p
-                    id="level-display"
-                    class="text-lg font-bold text-neutral-900 dark:text-white"
-                  >
-                    1 / 6
-                  </p>
-                </div>
-                <div class="text-right">
-                  <p
-                    class="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
-                  >
-                    Pontuação
-                  </p>
-                  <p
-                    id="score-display"
-                    class="text-lg font-bold text-emerald-600 dark:text-emerald-400"
-                  >
-                    0
-                  </p>
-                </div>
-              </div>
-            </header>
-
-            <!-- Body do jogo -->
-            <div class="p-6 md:p-10 space-y-5">
-              <!-- Instrução + timer -->
-              <div
-                class="relative bg-neutral-50 dark:bg-neutral-950/50 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 md:p-8 overflow-hidden"
-              >
-                <!-- Barra de tempo -->
-                <div
-                  class="absolute top-0 left-0 h-1.5 w-full bg-neutral-200 dark:bg-neutral-800"
-                >
-                  <div
-                    id="time-bar"
-                    class="h-full bg-gradient-to-r from-emerald-500 to-red-500 w-full transition-all duration-1000 linear"
-                  ></div>
-                </div>
-
-                <p
-                  class="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2"
-                >
-                  Missão
-                </p>
-                <h3
-                  id="mission-text"
-                  class="font-display text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white leading-tight"
-                >
-                  Deixe o texto azul!
-                </h3>
-              </div>
-
-              <!-- Preview + Editor -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <!-- Preview -->
-                <div
-                  class="flex flex-col border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden"
-                >
-                  <div
-                    class="bg-neutral-50 dark:bg-neutral-950/50 px-4 py-2.5 border-b border-neutral-200 dark:border-neutral-800 flex items-center gap-2"
-                  >
-                    <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-                    <span class="ml-2 text-xs font-mono text-neutral-500"
-                      >preview.html</span
-                    >
-                  </div>
-                  <div
-                    id="live-preview"
-                    class="flex-1 p-8 flex items-center justify-center bg-white min-h-[220px]"
-                  ></div>
-                </div>
-
-                <!-- Editor -->
-                <div
-                  class="flex flex-col border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden"
-                >
-                  <div
-                    class="bg-neutral-50 dark:bg-neutral-950/50 px-4 py-2.5 border-b border-neutral-200 dark:border-neutral-800 flex items-center justify-between"
-                  >
-                    <span class="text-xs font-mono text-neutral-500"
-                      >index.html</span
-                    >
-                    <span
-                      class="text-xs font-mono text-blue-600 dark:text-blue-400"
-                      >HTML</span
-                    >
-                  </div>
-                  <div
-                    class="flex-1 p-6 flex flex-col justify-center font-mono text-sm bg-neutral-900 text-neutral-300 min-h-[220px]"
-                  >
-                    <div id="code-display" class="leading-relaxed"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Opções -->
-              <div
-                id="options-container"
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
-              ></div>
-            </div>
-          </div>
-
-          <!-- ===================== END SCREEN ===================== -->
-          <div
-            id="end-screen"
-            class="hidden flex-col items-center text-center p-8 md:p-16 space-y-6"
-          >
-            <span
-              class="inline-block bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase"
-            >
-              Fim de jogo
-            </span>
-
-            <h3
-              class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white tracking-tight"
-            >
-              Sua pontuação
-            </h3>
-
-            <p
-              id="final-score"
-              class="font-display text-7xl md:text-8xl font-black text-blue-600 dark:text-blue-400"
-            >
-              0
-            </p>
-
-            <p
-              id="end-message"
-              class="text-lg text-neutral-600 dark:text-neutral-400 max-w-md leading-relaxed"
-            ></p>
-
-            <button
-              onclick="resetGame()"
-              class="w-full sm:w-auto h-14 px-10 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md"
-            >
-              Jogar novamente ↻
-            </button>
+            <div id="options-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"></div>
           </div>
         </div>
 
-        <!-- Feedback overlay -->
-        <div
-          id="feedback-overlay"
-          class="fixed inset-0 pointer-events-none flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300"
-        >
-          <div
-            id="feedback-text"
-            class="text-6xl md:text-7xl font-black transform scale-50 transition-transform duration-300 drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]"
-          ></div>
+        <!-- END -->
+        <div id="end-screen" class="hidden flex-col items-center text-center p-8 md:p-16 space-y-6">
+          <span class="inline-block bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+            Fim de jogo
+          </span>
+          <h3 class="font-display text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white tracking-tight">
+            Sua pontuação
+          </h3>
+          <p id="final-score" class="font-display text-7xl md:text-8xl font-black text-blue-600 dark:text-blue-400">0</p>
+          <p id="end-message" class="text-lg text-neutral-600 dark:text-neutral-400 max-w-md leading-relaxed"></p>
+          <button onclick="resetGame()" class="w-full sm:w-auto h-14 px-10 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-xl font-semibold text-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-md">
+            Jogar novamente ↻
+          </button>
         </div>
-      </section>
-      <!-- ==================================================
-         FOOTER
-    =================================================== -->
-      <footer
-        class="max-w-6xl mx-auto px-6 py-16 border-t border-neutral-200 dark:border-neutral-800 text-center"
-      >
-        <p class="text-neutral-500 text-sm">
-          Feito com
-          <span class="text-neutral-900 dark:text-white font-semibold"
-            >Tailwind CSS</span
-          >
-          · Grupo 1 · 2° Semestre SESI
-        </p>
-      </footer>
-    </main>
 
-    <!-- ==================================================
-       SCRIPTS
-  =================================================== -->
-    <script>
-      /* ===== 1. Paths estáticos de fundo ===== */
-      const svg = document.getElementById("paths-svg");
-      const NS = "http://www.w3.org/2000/svg";
+      </div>
 
-      function makePaths(position) {
-        for (let i = 0; i < 36; i++) {
-          const d =
-            `M-${380 - i * 5 * position} -${189 + i * 6}` +
-            `C-${380 - i * 5 * position} -${189 + i * 6}` +
-            ` -${312 - i * 5 * position} ${216 - i * 6}` +
-            ` ${152 - i * 5 * position} ${343 - i * 6}` +
-            `C${616 - i * 5 * position} ${470 - i * 6}` +
-            ` ${684 - i * 5 * position} ${875 - i * 6}` +
-            ` ${684 - i * 5 * position} ${875 - i * 6}`;
+      <div id="feedback-overlay" class="fixed inset-0 pointer-events-none flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div id="feedback-text" class="text-6xl md:text-7xl font-black transform scale-50 transition-transform duration-300 drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]"></div>
+      </div>
+    </section><footer class="max-w-6xl mx-auto px-6 py-16 border-t border-neutral-200 dark:border-neutral-800 text-center">
+      <p class="text-neutral-500 text-sm">
+        Feito com <span class="text-neutral-900 dark:text-white font-semibold">Tailwind CSS</span> · Grupo 1 · 2° Semestre SESI
+      </p>
+    </footer>
 
-          const path = document.createElementNS(NS, "path");
-          path.setAttribute("d", d);
-          path.setAttribute("stroke", "currentColor");
-          path.setAttribute("stroke-width", (0.5 + i * 0.03).toFixed(2));
-          path.setAttribute("stroke-opacity", (0.2 + i * 0.02).toFixed(3));
-          path.setAttribute("fill", "none");
-          svg.appendChild(path);
-        }
+  </main>  <script>
+    /* Paths de fundo */
+    const svg = document.getElementById('paths-svg');
+    const NS = 'http://www.w3.org/2000/svg';
+    function makePaths(position) {
+      for (let i = 0; i < 36; i++) {
+        const d = `M-${380 - i * 5 * position} -${189 + i * 6}C-${380 - i * 5 * position} -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${152 - i * 5 * position} ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${684 - i * 5 * position} ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`;
+        const path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('stroke', 'currentColor');
+        path.setAttribute('stroke-width', (0.5 + i * 0.03).toFixed(2));
+        path.setAttribute('stroke-opacity', (0.2 + i * 0.02).toFixed(3));
+        path.setAttribute('fill', 'none');
+        svg.appendChild(path);
       }
-      makePaths(1);
-      makePaths(-1);
+    }
+    makePaths(1);
+    makePaths(-1);
 
-      /* ===== 2. Letras do título ===== */
-      const titleText = "Tailwind CSS";
-      const titleEl = document.getElementById("hero-title");
-
-      titleText.split(" ").forEach((word, wordIndex) => {
-        const wordSpan = document.createElement("span");
-        wordSpan.className = "inline-block mr-4 last:mr-0";
-
-        word.split("").forEach((letter, letterIndex) => {
-          const s = document.createElement("span");
-          s.className = "inline-block opacity-0";
-          s.textContent = letter;
-          const delay = wordIndex * 0.1 + letterIndex * 0.03;
-          s.style.animation = `rise-letter 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s forwards`;
-          wordSpan.appendChild(s);
-        });
-
-        titleEl.appendChild(wordSpan);
+    /* Letras do título */
+    const titleText = 'Tailwind CSS';
+    const titleEl = document.getElementById('hero-title');
+    titleText.split(' ').forEach((word, wi) => {
+      const wordSpan = document.createElement('span');
+      wordSpan.className = 'inline-block mr-4 last:mr-0';
+      word.split('').forEach((letter, li) => {
+        const s = document.createElement('span');
+        s.className = 'inline-block opacity-0';
+        s.textContent = letter;
+        s.style.animation = `rise-letter 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) ${wi * 0.1 + li * 0.03}s forwards`;
+        wordSpan.appendChild(s);
       });
+      titleEl.appendChild(wordSpan);
+    });
 
-      /* ===== 3. Formata o HTML extraído ===== */
-      function formatHTML(html) {
-        const tokens = html
-          .replace(/(<\/?[^>]+>)/g, "\n$1\n")
-          .split("\n")
-          .map((s) => s.trim())
-          .filter(Boolean);
-        let indent = 0;
-        const lines = [];
-        for (const t of tokens) {
-          if (t.startsWith("</")) {
-            indent = Math.max(0, indent - 1);
-            lines.push("  ".repeat(indent) + t);
-          } else if (
-            t.startsWith("<") &&
-            !t.endsWith("/>") &&
-            !/^<(img|input|br|hr|meta|link|source|area|base|col|embed|param|track|wbr)\b/i.test(
-              t,
-            )
-          ) {
-            lines.push("  ".repeat(indent) + t);
-            indent++;
-          } else {
-            lines.push("  ".repeat(indent) + t);
-          }
-        }
-        return lines.join("\n");
-      }
-
-      /* ===== 4. Copiar texto ===== */
-      async function copyText(text) {
-        try {
-          await navigator.clipboard.writeText(text);
-          return true;
-        } catch {
-          const ta = document.createElement("textarea");
-          ta.value = text;
-          document.body.appendChild(ta);
-          ta.select();
-          try {
-            document.execCommand("copy");
-            return true;
-          } catch {
-            return false;
-          } finally {
-            document.body.removeChild(ta);
-          }
+    /* Formata HTML */
+    function formatHTML(html) {
+      const tokens = html.replace(/(<\/?[^>]+>)/g, '\n$1\n').split('\n').map(s => s.trim()).filter(Boolean);
+      let indent = 0;
+      const lines = [];
+      for (const t of tokens) {
+        if (t.startsWith('</')) {
+          indent = Math.max(0, indent - 1);
+          lines.push('  '.repeat(indent) + t);
+        } else if (t.startsWith('<') && !t.endsWith('/>') &&
+          !/^<(img|input|br|hr|meta|link|source|area|base|col|embed|param|track|wbr)\b/i.test(t)) {
+          lines.push('  '.repeat(indent) + t);
+          indent++;
+        } else {
+          lines.push('  '.repeat(indent) + t);
         }
       }
+      return lines.join('\n');
+    }
 
-      /* ===== 5. Liga toggle + copiar em cada exemplo ===== */
-      document.querySelectorAll(".example").forEach((example) => {
-        const toggleBtn = example.querySelector(".toggle");
-        const copyBtn = example.querySelector(".copy");
-        const preview = example.querySelector(".preview");
-        const code = example.querySelector(".code");
-        const codeInner = code.querySelector("code");
+    /* Traduz classe → descrição */
+    function translateClass(c) {
+      const t = {
+        'bg-': 'cor de fundo', 'text-': 'cor/tamanho do texto',
+        'p-': 'padding (espaço interno)', 'm-': 'margin (espaço externo)',
+        'gap-': 'espaço entre itens', 'rounded-': 'cantos arredondados',
+        'shadow-': 'sombra', 'font-': 'peso da fonte',
+        'flex': 'ativa flexbox', 'grid-': 'ativa grid',
+        'items-': 'alinhamento vertical', 'justify-': 'alinhamento horizontal',
+        'w-': 'largura', 'h-': 'altura', 'border-': 'borda',
+        'hover:': 'aplica no hover', 'active:': 'aplica ao clicar',
+        'focus:': 'aplica ao focar', 'disabled:': 'aplica quando desabilitado',
+        'transition': 'suaviza mudanças', 'opacity-': 'transparência',
+        'cursor-': 'tipo de cursor', 'ring-': 'anel de foco',
+      };
+      for (const k of Object.keys(t)) {
+        if (c.startsWith(k)) return t[k];
+      }
+      return 'classe utilitária';
+    }
 
-        toggleBtn.addEventListener("click", () => {
-          const showing = !code.classList.contains("hidden");
-          if (showing) {
-            code.classList.add("hidden");
-            preview.classList.remove("hidden");
-            if (copyBtn) copyBtn.classList.add("hidden");
-            toggleBtn.textContent = "Ver código";
-          } else {
-            if (!codeInner.textContent.trim()) {
-              codeInner.textContent = formatHTML(preview.innerHTML.trim());
+    /* Coloriza classes no código */
+    function highlightClasses(html) {
+      return html.replace(/class="([^"]+)"/g, (m, classes) => {
+        const colored = classes.split(' ').filter(Boolean).map(c => {
+          let color = 'text-neutral-400';
+          if (c.startsWith('bg-')) color = 'text-emerald-300';
+          else if (c.startsWith('text-')) color = 'text-amber-300';
+          else if (c.startsWith('hover:') || c.startsWith('focus:') || c.startsWith('active:')) color = 'text-pink-400';
+          else if (c.startsWith('p-') || c.startsWith('m-') || c.startsWith('gap-')) color = 'text-cyan-300';
+          else if (c.startsWith('rounded-')) color = 'text-violet-300';
+          else if (c.startsWith('shadow-')) color = 'text-orange-300';
+          else if (c.startsWith('font-')) color = 'text-blue-300';
+          else if (c.startsWith('flex') || c.startsWith('grid')) color = 'text-yellow-300';
+          return `<span class="${color}">${c}</span>`;
+        }).join(' ');
+        return `class="${colored}"`;
+      });
+    }
+
+    /* Copia texto */
+    async function copyText(text) {
+      try { await navigator.clipboard.writeText(text); return true; }
+      catch {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); return true; }
+        catch { return false; }
+        finally { document.body.removeChild(ta); }
+      }
+    }
+
+    /* Liga os 3 botões em cada .example */
+    document.querySelectorAll('.example').forEach(example => {
+      const preview   = example.querySelector('.preview');
+      const btnClasses = example.querySelector('.btn-classes');
+      const btnCode   = example.querySelector('.btn-code');
+      const btnCopy   = example.querySelector('.btn-copy');
+      const panel     = example.querySelector('.classes-panel');
+      const list      = example.querySelector('.classes-list');
+      const codeBlock = example.querySelector('.code');
+      const codeInner = codeBlock.querySelector('code');
+
+      let showingClasses = false, showingCode = false;
+
+      function hideAll() {
+        panel.classList.add('hidden');
+        codeBlock.classList.add('hidden');
+        btnCopy.classList.add('hidden');
+        preview.classList.remove('hidden');
+        showingClasses = false;
+        showingCode = false;
+      }
+
+      /* Ver classes */
+      btnClasses.addEventListener('click', () => {
+        if (showingClasses) { hideAll(); return; }
+        hideAll();
+
+        // Extrai classes do primeiro elemento
+        const first = preview.firstElementChild;
+        const classes = new Set();
+        if (first) {
+          [first, ...first.querySelectorAll('*')].forEach(el => {
+            if (el.className && typeof el.className === 'string') {
+              el.className.split(' ').filter(Boolean).forEach(c => {
+                if (!c.startsWith('dark:')) classes.add(c);
+              });
             }
-            preview.classList.add("hidden");
-            code.classList.remove("hidden");
-            if (copyBtn) copyBtn.classList.remove("hidden");
-            toggleBtn.textContent = "Voltar ao resultado";
-          }
-        });
-
-        if (copyBtn) {
-          copyBtn.addEventListener("click", async () => {
-            const ok = await copyText(codeInner.textContent);
-            const orig = copyBtn.textContent;
-            copyBtn.textContent = ok ? "Copiado!" : "Falhou";
-            setTimeout(() => (copyBtn.textContent = orig), 1500);
           });
         }
+
+        list.innerHTML = [...classes].slice(0, 12).map(c =>
+          `<div class="class-item">
+             <code class="code-font text-sm text-blue-600 dark:text-blue-400">${c}</code>
+             <span class="text-sm text-neutral-600 dark:text-neutral-400">${translateClass(c)}</span>
+           </div>`
+        ).join('');
+
+        preview.classList.add('hidden');
+        panel.classList.remove('hidden');
+        showingClasses = true;
       });
-    </script>
-    <!-- ==================================================
-     SCRIPTS DO JOGO
-    =================================================== -->
-    <script>
-      // --- BASE DE DADOS DAS FASES ---
-      const levels = [
-        {
-          mission: "Deixe o fundo azul marinho (blue-900)!",
-          htmlTemplate: `<div class="w-32 h-32 rounded-xl shadow-lg border-2 border-slate-200 {class}"></div>`,
-          codeTemplate: `<span class="text-pink-400">&lt;div</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"w-32 h-32 rounded-xl {slot}"</span><span class="text-pink-400">&gt;&lt;/div&gt;</span>`,
-          correct: "bg-blue-900",
-          options: [
-            "text-blue-900",
-            "bg-blue-900",
-            "color-blue",
-            "bg-blue-text",
-          ],
-        },
-        {
-          mission:
-            "Arredonde totalmente os cantos deste botão (formato de pílula)!",
-          htmlTemplate: `<button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 {class} transition-all">Começar</button>`,
-          codeTemplate: `<span class="text-pink-400">&lt;button</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"bg-indigo-600 py-3 px-8 {slot}"</span><span class="text-pink-400">&gt;</span><br>&nbsp;&nbsp;Começar<br><span class="text-pink-400">&lt;/button&gt;</span>`,
-          correct: "rounded-full",
-          options: [
-            "rounded-lg",
-            "border-circle",
-            "rounded-full",
-            "radius-100",
-          ],
-        },
-        {
-          mission: "Adicione uma sombra grande (large shadow) ao card!",
-          htmlTemplate: `<div class="bg-white p-6 rounded-xl border border-gray-100 w-48 text-slate-800 text-center {class}"><p class="font-bold">Card</p><p class="text-xs text-gray-500 mt-2">Destaque-me</p></div>`,
-          codeTemplate: `<span class="text-pink-400">&lt;div</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"bg-white p-6 rounded-xl {slot}"</span><span class="text-pink-400">&gt;</span><br>&nbsp;&nbsp;...<br><span class="text-pink-400">&lt;/div&gt;</span>`,
-          correct: "shadow-lg",
-          options: ["shadow-lg", "box-shadow", "shadow-big", "drop-shadow"],
-        },
-        {
-          mission:
-            "Centralize o conteúdo do container vertical e horizontalmente usando Flexbox!",
-          htmlTemplate: `<div class="w-full h-40 bg-slate-100 border-2 border-dashed border-slate-300 flex {class}"><div class="w-12 h-12 bg-pink-500 rounded-lg"></div></div>`,
-          codeTemplate: `<span class="text-pink-400">&lt;div</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"flex w-full h-40 {slot}"</span><span class="text-pink-400">&gt;</span><br>&nbsp;&nbsp;<span class="text-slate-500">&lt;!-- Box --&gt;</span><br><span class="text-pink-400">&lt;/div&gt;</span>`,
-          correct: "justify-center items-center",
-          options: [
-            "align-center",
-            "justify-center items-center",
-            "text-center",
-            "flex-center",
-          ],
-        },
-        {
-          mission:
-            "Faça o texto ficar vermelho de forma suave quando o mouse passar por cima (hover)!",
-          htmlTemplate: `<a href="#" class="text-2xl font-black text-slate-800 transition-colors duration-300 cursor-pointer {class}">Passe o Mouse</a>`,
-          codeTemplate: `<span class="text-pink-400">&lt;a</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"text-slate-800 transition-colors {slot}"</span><span class="text-pink-400">&gt;</span><br>&nbsp;&nbsp;Passe o Mouse<br><span class="text-pink-400">&lt;/a&gt;</span>`,
-          correct: "hover:text-red-600",
-          options: [
-            "hover:text-red-600",
-            "on-hover:red",
-            "text-red-600-hover",
-            "active:text-red",
-          ],
-        },
-        {
-          mission:
-            "Aplique um espaçamento interno (padding) de tamanho 8 em todos os lados!",
-          htmlTemplate: `<div class="bg-emerald-100 border-2 border-emerald-500 rounded-lg {class}"><span class="bg-emerald-500 text-white font-bold px-2 py-1 rounded">Conteúdo Interno</span></div>`,
-          codeTemplate: `<span class="text-pink-400">&lt;div</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"bg-emerald-100 {slot}"</span><span class="text-pink-400">&gt;</span><br>&nbsp;&nbsp;Conteúdo Interno<br><span class="text-pink-400">&lt;/div&gt;</span>`,
-          correct: "p-8",
-          options: ["m-8", "pad-8", "p-8", "spacing-8"],
-        },
-      ];
 
-      // --- ESTADO ---
-      let currentLevelIndex = 0;
-      let score = 0;
-      let timeLeft = 15;
-      let timerInterval;
-      const maxTime = 15;
+      /* Ver código */
+      btnCode.addEventListener('click', () => {
+        if (showingCode) { hideAll(); return; }
+        hideAll();
 
-      // --- DOM ---
-      const startScreen = document.getElementById("start-screen");
-      const gameScreen = document.getElementById("game-screen");
-      const endScreen = document.getElementById("end-screen");
-      const missionText = document.getElementById("mission-text");
-      const livePreview = document.getElementById("live-preview");
-      const codeDisplay = document.getElementById("code-display");
-      const optionsContainer = document.getElementById("options-container");
-      const scoreDisplay = document.getElementById("score-display");
-      const levelDisplay = document.getElementById("level-display");
-      const timeBar = document.getElementById("time-bar");
-      const feedbackOverlay = document.getElementById("feedback-overlay");
-      const feedbackText = document.getElementById("feedback-text");
-      const finalScore = document.getElementById("final-score");
-      const endMessage = document.getElementById("end-message");
-
-      // --- FUNÇÕES ---
-      function startGame() {
-        startScreen.classList.add("hidden");
-        gameScreen.classList.remove("hidden");
-        gameScreen.classList.add("flex");
-        score = 0;
-        currentLevelIndex = 0;
-        updateScore();
-        loadLevel();
-      }
-
-      function loadLevel() {
-        if (currentLevelIndex >= levels.length) return endGame();
-
-        const level = levels[currentLevelIndex];
-        levelDisplay.innerText = `${currentLevelIndex + 1} / ${levels.length}`;
-        missionText.innerText = level.mission;
-
-        const shuffled = [...level.options].sort(() => Math.random() - 0.5);
-        renderCode(level.codeTemplate, "");
-        renderPreview(level.htmlTemplate, "");
-
-        optionsContainer.innerHTML = "";
-        shuffled.forEach((opt) => {
-          const btn = document.createElement("button");
-          btn.className =
-            "h-14 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 font-mono text-sm rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md flex items-center justify-center px-3";
-          btn.innerText = opt;
-          btn.onmouseenter = () => {
-            renderCode(level.codeTemplate, opt, true);
-            renderPreview(level.htmlTemplate, opt);
-          };
-          btn.onmouseleave = () => {
-            renderCode(level.codeTemplate, "");
-            renderPreview(level.htmlTemplate, "");
-          };
-          btn.onclick = () => checkAnswer(opt, level.correct);
-          optionsContainer.appendChild(btn);
-        });
-
-        timeLeft = maxTime;
-        updateTimeBar();
-        clearInterval(timerInterval);
-        timerInterval = setInterval(tickTimer, 1000);
-      }
-
-      function renderCode(template, inserted, isPreview = false) {
-        const slot = inserted
-          ? `<span class="bg-blue-600 text-white px-1 rounded">${inserted}</span>`
-          : `<span class="bg-neutral-700 text-neutral-300 px-2 py-0.5 rounded animate-pulse border border-blue-500">[ ______ ]</span>`;
-        codeDisplay.innerHTML = template.replace("{slot}", slot);
-      }
-
-      function renderPreview(template, inserted) {
-        livePreview.innerHTML = template.replace("{class}", inserted);
-      }
-
-      function tickTimer() {
-        timeLeft--;
-        updateTimeBar();
-        if (timeLeft <= 0) {
-          clearInterval(timerInterval);
-          handleTimeOut();
-        }
-      }
-
-      function updateTimeBar() {
-        const pct = (timeLeft / maxTime) * 100;
-        timeBar.style.width = `${pct}%`;
-        timeBar.className =
-          "h-full transition-all duration-1000 linear " +
-          (pct > 50
-            ? "bg-emerald-500"
-            : pct > 25
-              ? "bg-amber-500"
-              : "bg-red-500");
-      }
-
-      function checkAnswer(selected, correct) {
-        clearInterval(timerInterval);
-        const level = levels[currentLevelIndex];
-        renderCode(level.codeTemplate, selected);
-        renderPreview(level.htmlTemplate, selected);
-
-        optionsContainer.querySelectorAll("button").forEach((b) => {
-          b.disabled = true;
-          b.onmouseenter = null;
-          b.onmouseleave = null;
-        });
-
-        if (selected === correct) {
-          score += 10 + timeLeft;
-          showFeedback("CORRETO!", "text-emerald-400");
+        const first = preview.firstElementChild;
+        if (first) {
+          const html = first.outerHTML;
+          codeInner.innerHTML = highlightClasses(formatHTML(html));
         } else {
-          score = Math.max(0, score - 5);
-          showFeedback("ERROU!", "text-red-500");
+          codeInner.textContent = '(sem conteúdo)';
         }
-        updateScore();
 
-        setTimeout(() => {
-          currentLevelIndex++;
-          loadLevel();
-        }, 1500);
+        preview.classList.add('hidden');
+        codeBlock.classList.remove('hidden');
+        btnCopy.classList.remove('hidden');
+        showingCode = true;
+      });
+
+      /* Copiar */
+      btnCopy.addEventListener('click', async () => {
+        const ok = await copyText(codeInner.textContent);
+        const orig = btnCopy.textContent;
+        btnCopy.textContent = ok ? 'Copiado!' : 'Falhou';
+        setTimeout(() => (btnCopy.textContent = orig), 1500);
+      });
+    });
+  </script>
+  <script>
+    /* ===== QUIZ · TAILWIND BUILDER ===== */
+    const levels = [
+      {
+        mission: "Deixe o fundo azul marinho (blue-900)!",
+        htmlTemplate: `<div class="w-32 h-32 rounded-xl shadow-lg border-2 border-slate-200 {class}"></div>`,
+        codeTemplate: `<span class="text-pink-400">&lt;div</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"w-32 h-32 rounded-xl {slot}"</span><span class="text-pink-400">&gt;&lt;/div&gt;</span>`,
+        correct: "bg-blue-900",
+        options: ["text-blue-900", "bg-blue-900", "color-blue", "bg-blue-text"]
+      },
+      {
+        mission: "Arredonde totalmente os cantos deste botão (formato de pílula)!",
+        htmlTemplate: `<button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 {class} transition-all">Começar</button>`,
+        codeTemplate: `<span class="text-pink-400">&lt;button</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"bg-indigo-600 py-3 px-8 {slot}"</span><span class="text-pink-400">&gt;Começar&lt;/button&gt;</span>`,
+        correct: "rounded-full",
+        options: ["rounded-lg", "border-circle", "rounded-full", "radius-100"]
+      },
+      {
+        mission: "Adicione uma sombra grande (large shadow) ao card!",
+        htmlTemplate: `<div class="bg-white p-6 rounded-xl border border-gray-100 w-48 text-slate-800 text-center {class}"><p class="font-bold">Card</p><p class="text-xs text-gray-500 mt-2">Destaque-me</p></div>`,
+        codeTemplate: `<span class="text-pink-400">&lt;div</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"bg-white p-6 rounded-xl {slot}"</span><span class="text-pink-400">&gt;</span><br>&nbsp;&nbsp;...<br><span class="text-pink-400">&lt;/div&gt;</span>`,
+        correct: "shadow-lg",
+        options: ["shadow-lg", "box-shadow", "shadow-big", "drop-shadow"]
+      },
+      {
+        mission: "Centralize o conteúdo vertical e horizontalmente usando Flexbox!",
+        htmlTemplate: `<div class="w-full h-40 bg-slate-100 border-2 border-dashed border-slate-300 flex {class}"><div class="w-12 h-12 bg-pink-500 rounded-lg"></div></div>`,
+        codeTemplate: `<span class="text-pink-400">&lt;div</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"flex w-full h-40 {slot}"</span><span class="text-pink-400">&gt;</span><br>&nbsp;&nbsp;<span class="text-slate-500">&lt;!-- Box --&gt;</span><br><span class="text-pink-400">&lt;/div&gt;</span>`,
+        correct: "justify-center items-center",
+        options: ["align-center", "justify-center items-center", "text-center", "flex-center"]
+      },
+      {
+        mission: "Faça o texto ficar vermelho quando o mouse passar (hover)!",
+        htmlTemplate: `<a href="#" class="text-2xl font-black text-slate-800 transition-colors duration-300 cursor-pointer {class}">Passe o Mouse</a>`,
+        codeTemplate: `<span class="text-pink-400">&lt;a</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"text-slate-800 transition-colors {slot}"</span><span class="text-pink-400">&gt;Link&lt;/a&gt;</span>`,
+        correct: "hover:text-red-600",
+        options: ["hover:text-red-600", "on-hover:red", "text-red-600-hover", "active:text-red"]
+      },
+      {
+        mission: "Aplique um padding de tamanho 8 em todos os lados!",
+        htmlTemplate: `<div class="bg-emerald-100 border-2 border-emerald-500 rounded-lg {class}"><span class="bg-emerald-500 text-white font-bold px-2 py-1 rounded">Conteúdo Interno</span></div>`,
+        codeTemplate: `<span class="text-pink-400">&lt;div</span> <span class="text-emerald-300">class=</span><span class="text-amber-300">"bg-emerald-100 {slot}"</span><span class="text-pink-400">&gt;Conteúdo&lt;/div&gt;</span>`,
+        correct: "p-8",
+        options: ["m-8", "pad-8", "p-8", "spacing-8"]
       }
+    ];
 
-      function handleTimeOut() {
+    let currentLevelIndex = 0;
+    let score = 0;
+    let timeLeft = 15;
+    let timerInterval;
+    const maxTime = 15;
+
+    const startScreen  = document.getElementById('start-screen');
+    const gameScreen   = document.getElementById('game-screen');
+    const endScreen    = document.getElementById('end-screen');
+    const missionText  = document.getElementById('mission-text');
+    const livePreview  = document.getElementById('live-preview');
+    const codeDisplay  = document.getElementById('code-display');
+    const optionsContainer = document.getElementById('options-container');
+    const scoreDisplay = document.getElementById('score-display');
+    const levelDisplay = document.getElementById('level-display');
+    const timeBar      = document.getElementById('time-bar');
+    const feedbackOverlay = document.getElementById('feedback-overlay');
+    const feedbackText = document.getElementById('feedback-text');
+    const finalScore   = document.getElementById('final-score');
+    const endMessage   = document.getElementById('end-message');
+
+    function startGame() {
+      startScreen.classList.add('hidden');
+      gameScreen.classList.remove('hidden');
+      gameScreen.classList.add('flex');
+      score = 0;
+      currentLevelIndex = 0;
+      updateScore();
+      loadLevel();
+    }
+
+    function loadLevel() {
+      if (currentLevelIndex >= levels.length) return endGame();
+      const level = levels[currentLevelIndex];
+      levelDisplay.innerText = `${currentLevelIndex + 1} / ${levels.length}`;
+      missionText.innerText = level.mission;
+
+      const shuffled = [...level.options].sort(() => Math.random() - 0.5);
+      renderCode(level.codeTemplate, "");
+      renderPreview(level.htmlTemplate, "");
+
+      optionsContainer.innerHTML = '';
+      shuffled.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = "h-14 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 font-mono text-sm rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md flex items-center justify-center px-3";
+        btn.innerText = opt;
+        btn.onmouseenter = () => { renderCode(level.codeTemplate, opt); renderPreview(level.htmlTemplate, opt); };
+        btn.onmouseleave = () => { renderCode(level.codeTemplate, ""); renderPreview(level.htmlTemplate, ""); };
+        btn.onclick = () => checkAnswer(opt, level.correct);
+        optionsContainer.appendChild(btn);
+      });
+
+      timeLeft = maxTime;
+      updateTimeBar();
+      clearInterval(timerInterval);
+      timerInterval = setInterval(tickTimer, 1000);
+    }
+
+    function renderCode(template, inserted) {
+      const slot = inserted
+        ? `<span class="bg-blue-600 text-white px-1 rounded">${inserted}</span>`
+        : `<span class="bg-neutral-700 text-neutral-300 px-2 py-0.5 rounded animate-pulse border border-blue-500">[ ______ ]</span>`;
+      codeDisplay.innerHTML = template.replace('{slot}', slot);
+    }
+
+    function renderPreview(template, inserted) {
+      livePreview.innerHTML = template.replace('{class}', inserted);
+    }
+
+    function tickTimer() {
+      timeLeft--;
+      updateTimeBar();
+      if (timeLeft <= 0) { clearInterval(timerInterval); handleTimeOut(); }
+    }
+
+    function updateTimeBar() {
+      const pct = (timeLeft / maxTime) * 100;
+      timeBar.style.width = `${pct}%`;
+      timeBar.className = "h-full transition-all duration-1000 linear " +
+        (pct > 50 ? "bg-emerald-500" : pct > 25 ? "bg-amber-500" : "bg-red-500");
+    }
+
+    function checkAnswer(selected, correct) {
+      clearInterval(timerInterval);
+      const level = levels[currentLevelIndex];
+      renderCode(level.codeTemplate, selected);
+      renderPreview(level.htmlTemplate, selected);
+
+      optionsContainer.querySelectorAll('button').forEach(b => {
+        b.disabled = true;
+        b.onmouseenter = null;
+        b.onmouseleave = null;
+      });
+
+      if (selected === correct) {
+        score += 10 + timeLeft;
+        showFeedback("CORRETO!", "text-emerald-400");
+      } else {
         score = Math.max(0, score - 5);
-        updateScore();
-        showFeedback("TEMPO ESGOTADO!", "text-amber-500");
-        setTimeout(() => {
-          currentLevelIndex++;
-          loadLevel();
-        }, 1500);
+        showFeedback("ERROU!", "text-red-500");
       }
+      updateScore();
+      setTimeout(() => { currentLevelIndex++; loadLevel(); }, 1500);
+    }
 
-      function updateScore() {
-        scoreDisplay.innerText = score;
-      }
+    function handleTimeOut() {
+      score = Math.max(0, score - 5);
+      updateScore();
+      showFeedback("TEMPO ESGOTADO!", "text-amber-500");
+      setTimeout(() => { currentLevelIndex++; loadLevel(); }, 1500);
+    }
 
-      function showFeedback(text, colorClass) {
-        feedbackText.innerText = text;
-        feedbackText.className = `text-6xl md:text-7xl font-black drop-shadow-[0_0_20px_rgba(0,0,0,0.8)] ${colorClass} transform scale-100 transition-transform duration-300`;
-        feedbackOverlay.classList.remove("hidden", "opacity-0");
-        feedbackOverlay.classList.add("opacity-100");
-        setTimeout(() => {
-          feedbackText.classList.remove("scale-100");
-          feedbackText.classList.add("scale-50");
-          feedbackOverlay.classList.remove("opacity-100");
-          feedbackOverlay.classList.add("opacity-0");
-          setTimeout(() => feedbackOverlay.classList.add("hidden"), 300);
-        }, 1000);
-      }
+    function updateScore() { scoreDisplay.innerText = score; }
 
-      function endGame() {
-        gameScreen.classList.remove("flex");
-        gameScreen.classList.add("hidden");
-        endScreen.classList.remove("hidden");
-        endScreen.classList.add("flex");
-        finalScore.innerText = score;
-        if (score > 100)
-          endMessage.innerText = "Excelente! Você é um Mestre do Tailwind 🏆";
-        else if (score > 50)
-          endMessage.innerText = "Muito bom! Você está dominando as classes 🚀";
-        else
-          endMessage.innerText =
-            "Continue praticando! O CSS leva tempo para dominar 💻";
-      }
+    function showFeedback(text, colorClass) {
+      feedbackText.innerText = text;
+      feedbackText.className = `text-6xl md:text-7xl font-black drop-shadow-[0_0_20px_rgba(0,0,0,0.8)] ${colorClass} transform scale-100 transition-transform duration-300`;
+      feedbackOverlay.classList.remove('hidden', 'opacity-0');
+      feedbackOverlay.classList.add('opacity-100');
+      setTimeout(() => {
+        feedbackText.classList.remove('scale-100');
+        feedbackText.classList.add('scale-50');
+        feedbackOverlay.classList.remove('opacity-100');
+        feedbackOverlay.classList.add('opacity-0');
+        setTimeout(() => feedbackOverlay.classList.add('hidden'), 300);
+      }, 1000);
+    }
 
-      function resetGame() {
-        endScreen.classList.remove("flex");
-        endScreen.classList.add("hidden");
-        startScreen.classList.remove("hidden");
-      }
-    </script>
-  </body>
+    function endGame() {
+      gameScreen.classList.remove('flex');
+      gameScreen.classList.add('hidden');
+      endScreen.classList.remove('hidden');
+      endScreen.classList.add('flex');
+      finalScore.innerText = score;
+      if (score > 100)      endMessage.innerText = "Excelente! Você é um Mestre do Tailwind 🏆";
+      else if (score > 50)  endMessage.innerText = "Muito bom! Você está dominando as classes 🚀";
+      else                  endMessage.innerText = "Continue praticando! 💻";
+    }
+
+    function resetGame() {
+      endScreen.classList.remove('flex');
+      endScreen.classList.add('hidden');
+      startScreen.classList.remove('hidden');
+    }
+  </script>
+</body>
+
 </html>
